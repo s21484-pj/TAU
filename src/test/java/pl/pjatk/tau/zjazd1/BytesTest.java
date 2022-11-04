@@ -1,9 +1,12 @@
-package pl.pjatk.tau;
+package pl.pjatk.tau.zjazd1;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import pl.pjatk.tau.Bytes;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BytesTest {
 
@@ -12,11 +15,6 @@ public class BytesTest {
     @BeforeEach
     public void init() {
         bytes = new Bytes();
-    }
-
-    @AfterEach
-    public void clean() {
-        bytes = null;
     }
 
     @Test
@@ -30,7 +28,7 @@ public class BytesTest {
         bytes.setB(B);
 
         //THEN
-        assertEquals(128, B);
+        assertThat(128, is(B));
     }
 
     @Test
@@ -41,5 +39,10 @@ public class BytesTest {
         //WHEN
 
         //THEN
+    }
+
+    @AfterEach
+    public void clean() {
+        bytes = null;
     }
 }

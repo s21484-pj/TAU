@@ -48,6 +48,10 @@ public class Bytes {
         return B / 1024 / 1024;
     }
 
+    public int calculateKilobytesToMegabytes(int KB) {
+        return KB / 1024;
+    }
+
     public int getBit() {
         return bit;
     }
